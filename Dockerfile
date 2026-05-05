@@ -1,24 +1,20 @@
-FROM pytorch/pytorch:1.9.1-cuda11.1-cudnn8-runtime
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-LABEL author="Gus Hahn-Powell"
-LABEL description="Default container definition for class competition."
+# Set the working directory in the container
+WORKDIR ~/repos/ling-539/comp-code/grad-level-term-project-kaggle-competition-Sevren-Quijada
 
-# Create app directory
-WORKDIR /app
+# Copy the current directory contents into the container at /usr/src/app
+COPY . .
 
-RUN pip install -U pytorch-lightning \
-    graphviz==0.16 \
-    "ipython>=7.20.0,<8" \
-    notebook==6.4.6 \
-    jupyter-client==7.1.2 \
-    jupyter-contrib-nbextensions==0.5.1 \
-    && jupyter contrib nbextension install --user
+# Install any needed packages specified in requirements.txt 
+RUN pip install --no-cache-dir -r requirements.txt
 
-# copy executables to path
-COPY . ./
-RUN chmod u+x  scripts/* \
-    && mv scripts/* /usr/local/bin/ \
-    && rmdir scripts
+# Make port 80 available to the world outside this container (Optional, only for web apps)
+#EXPOSE 80
 
-# launch jupyter by default
-CMD ["/bin/bash", "launch-notebook"]
+# Define environment variable (optional)
+#ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "./scripts/classify.PY"]

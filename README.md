@@ -8,6 +8,7 @@ The competition is hosted at [https://www.kaggle.com/competitions/ling-539-compe
 **To join the competition, you must accept it at the following URL**: [https://www.kaggle.com/t/03c8dd2e91474ec1b64203601079805b](https://www.kaggle.com/t/03c8dd2e91474ec1b64203601079805b)
 
 # Notes
+- Hello there Sevren
 - This project involves a **performance evaluation** as well as your **graded assessment**. It's important to keep these two things separate in your mind.
   - The rubric which will be used to assess your submission *for a grade* (ie, not to evaluate the performance of your model) is in the D2L assignment item
   - You are permitted to propose more than one classification model or approach. However, as described on the assessment rubric, **at least one of your submitted models must use one or more of the classification algorithms covered in this course.** (For more details related to assessment, be sure you understand the details of that rubric)
